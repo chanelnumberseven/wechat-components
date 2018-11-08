@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents":{
+    "model-mask":"/components/mask/mask"
+  }
+}

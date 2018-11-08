@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    visible:false
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -43,6 +44,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  show:function(){
+    this.setData({
+      visible:true
     })
   }
 })

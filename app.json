@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "components/loading/loading"
+    "components/loading/loading",
+    "components/mask/mask"
   ],
   "window": {
     "backgroundTextStyle": "light",

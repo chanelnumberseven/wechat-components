@@ -7,7 +7,10 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
+  <view class="usermotto" bindtap='show'>
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
+<model-mask visible="{{visible}}" position="top">
+  <view style="height:400px;background-color:red;"></view>
+</model-mask>

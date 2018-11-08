@@ -1,0 +1,5 @@
+<view wx:if="{{visible}}" style="{{css}}" class="model-mask {{animation}}" bindtap='hide'>
+  <view class="model-mask-content {{position}}">
+    <slot></slot>
+  </view>
+</view>
