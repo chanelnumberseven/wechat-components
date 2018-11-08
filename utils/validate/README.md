@@ -1,0 +1,69 @@
+<h1>validate</h1>
+<section>
+  <h2>usage</h2>
+  <pre>
+    import Validate from 'validate'
+
+    let validate = new Validate();
+    validate.validate({
+      phone:{
+        value:'18500121537',
+        emptyTip:'请输入手机号',
+        errorTip:'手机号格式错误'
+        rule:[
+          [1,11],
+          '^1[3456789]',
+          function(obj){}
+        ]
+      },
+      onSubmit:function(){
+        // submit your form
+      }
+    })
+  </pre>
+  <p>validate.validate 函数接受一个对象作为参数</p>
+  <ul>
+    <li>
+      <dl>
+        <dt>phone</dt>
+        <dd>
+           要验证的值的类型，比如手机号，可以写phone,phone的配置：
+           <ul>
+             <li>
+               <dl>
+                 <dt>value</dt>
+                 <dd>要验证的值<dd>
+               <dl>
+             <li>
+             <li>
+               <dl>
+                 <dt>emptyTip</dt>
+                 <dd>值为空时的提示语<dd>
+               <dl>
+             <li>
+             <li>
+               <dl>
+                 <dt>errorTip</dt>
+                 <dd>值验证不通过时的提示语<dd>
+               <dl>
+             <li>
+             <li>
+               <dl>
+                 <dt>rule</dt>
+                 <dd>值的验证规则集合，其中第一项为值的长度范围，第二项为正则规则，第三项函数规则，对应的函数规则不存在时指定false即可<dd>
+               <dl>
+             <li>
+           </ul>
+        <dd>
+      </dl>
+      <p>你可以添加任意类型的验证类型，对于未内置的验证类型，你必须明确指出该验证类型的验证规则(rule)的值和验证提示</p>
+      <p>对于重复的验证类型，以phone为例可添加phoneX,X代表一个数字即可继承phone的验证规则</p>
+    </li>
+    <li>
+      <dl>
+        <dt>onsubmit<dt>
+        <dd>当表单验证通过时要执行的函数<dd>
+      </dl>
+    </li>
+  </ul>
+</section>
