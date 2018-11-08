@@ -7,7 +7,7 @@
         <dt>code</dt>
         <dd>type: String</dd>
         <dd>value:Number</dd>
-        <dd>请求返回时code值</dd>
+        <dd>请求返回时code值,code===loadingCode时会将loading模块的slot内容展现</dd>
       </dl>
     </li>
     <li>
@@ -70,6 +70,8 @@
     code="-1" 
     loading-code="-1" 
     success-code="10000"
-    bindreloading="reloading" &gt;&lt;/model-loading&gt;
+    bindreloading="reloading" &gt;
+      页面内容
+    &lt;/model-loading&gt;
   </pre>
 </section>
