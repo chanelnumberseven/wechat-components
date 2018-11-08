@@ -26,7 +26,7 @@
     &lt;model-icon type="boy" css="font-size:16px;"&gt;&lt;/model-badge&gt;
   </pre>
   <figure>
-    <img src="https://chanelnumberfive.github.io/weichat-components/images/mine.png"/>
+    <img src="https://chanelnumberfive.github.io/wechat-components/images/mine.png"/>
     <figcaption>icon</figcaption> 
   <figure>
 </section>
