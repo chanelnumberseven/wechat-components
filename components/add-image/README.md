@@ -1,0 +1,51 @@
+<h1>图片上传组件</h1>
+<section>
+  <h2>properties</h2>
+  <ul>
+    <li>
+      <dl>
+        <dt>max-length</dt>
+        <dd>type:Number,String<dd>
+        <dd>value:''</dd>
+        <dd>定义上传图片的数量<dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>title</dt>
+        <dd>type:String<dd>
+        <dd>value:''</dd>
+        <dd>组件标题<dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>items</dt>
+        <dd>type:Array<dd>
+        <dd>value:[]</dd>
+        <dd>一个图片地址的集合（数据格式 {url:''}）<dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section>
+ <h2>event</h2>
+ <ul>
+   <li>
+     <dl>
+       <dt>upload</dt>
+       <dd>图片上传成功时会发布upload事件,参数是用户选择图片地址的集合</dd>
+     </dl>
+   </li>
+ </ul>
+</section>
+<section>
+  <h2>example</h2>
+  <pre>
+    &lt;form-image bindupload="upload" title=""&gt;&lt;/form-image&gt;
+  </pre>
+  <figure>
+    <img src="https://chanelnumberfive.github.io/easy-open-door-components/images/upload.png"/>
+    <figcaption>upload</figcaption>
+  <figure>
+</section>

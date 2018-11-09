@@ -3,7 +3,8 @@
     "pages/index/index",
     "components/loading/loading",
     "components/mask/mask",
-    "components/tab/tab"
+    "components/tab/tab",
+    "components/add-image/add-image"
   ],
   "window": {
     "backgroundTextStyle": "light",
