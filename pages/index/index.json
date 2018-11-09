@@ -1,5 +1,6 @@
 {
   "usingComponents":{
-    "model-mask":"/components/mask/mask"
+    "model-mask":"/components/mask/mask",
+    "model-tab":"/components/tab/tab"
   }
 }

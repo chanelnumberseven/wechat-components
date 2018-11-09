@@ -37,12 +37,31 @@
   </ul>
 </section>
 <section>
+  <h2>events</h2>
+  <ul>
+    <li>
+      <dl>
+        <dt>show</dt>
+        <dd>当mask显示时会触发show事件</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>hide</dt>
+        <dd>当mask隐藏时会触发hide事件</dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section>
   <h2>example</h2>
   <pre>
     &lt;model-mask 
     visible="{{true}}" 
     auto-close="{{false}}" 
-    position="bottom"&gt;
+    position="bottom"
+    bindhide="hide"
+    bindshow="show"&gt;
       子内容
     &lt;/model-mask&gt;
   </pre>

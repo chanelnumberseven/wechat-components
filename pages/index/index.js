@@ -50,5 +50,15 @@ Page({
     this.setData({
       visible:true
     })
+  },
+  hide:function(){
+    wx.showToast({
+      title: 'you hide me!',
+    })
+  },
+  visible: function () {
+    wx.showToast({
+      title: 'you show me!',
+    })
   }
 })

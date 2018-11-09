@@ -1,0 +1,17 @@
+<view class="tab {{position}}" style="{{css}}">
+  <view class="tab-nav">
+    <view 
+    class="tab-nav-item {{currentPageIndex==index?'active':''}}" 
+    data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" 
+    bindtap="tab">
+      <view wx-if="{{items[index]!=null}}" class="tab-nav-text">{{item[itemKey]||item}}</view>
+      <slot name="tab-nav-{{index}}"></slot>
+    </view>
+  </view>
+  <slot></slot>
+  <swiper style="flex:1;" current="{{currentPageIndex}}" bindchange="change">
+    <swiper-item wx:for="{{length||items}}" wx:key="{{index}}">
+      <scroll-view style="height:100%;" scroll-y="true"><slot name="tab-{{index}}"></slot></scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

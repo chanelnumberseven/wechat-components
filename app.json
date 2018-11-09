@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "components/loading/loading",
-    "components/mask/mask"
+    "components/mask/mask",
+    "components/tab/tab"
   ],
   "window": {
     "backgroundTextStyle": "light",

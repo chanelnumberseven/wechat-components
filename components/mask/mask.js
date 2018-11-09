@@ -2,7 +2,20 @@ Component({
   properties: {
     visible: {
       type: Boolean,
-      value: false
+      value: false,
+      observer:function(newValue,oldValue){
+        if(!newValue){
+          this.triggerEvent('hide', {}, {
+            bubbles: true,
+            composed: true
+          })
+        }else{
+          this.triggerEvent('show', {}, {
+            bubbles: true,
+            composed: true
+          })
+        }
+      }
     },
     css: {
       type: String,
@@ -25,10 +38,6 @@ Component({
       if (this.data.autoClose) {
         this.setData({
           visible: false
-        })
-        this.triggerEvent('hide', {}, {
-          bubbles: true,
-          composed: true
         })
       }
     }
