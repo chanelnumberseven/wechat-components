@@ -42,10 +42,6 @@
 <section>
   <h2>example</h2>
   <pre>
-    &lt;form-image bindupload="upload" title=""&gt;&lt;/form-image&gt;
+    &lt;add-image bindupload="upload" title=""&gt;&lt;/add-image&gt;
   </pre>
-  <figure>
-    <img src="https://chanelnumberfive.github.io/easy-open-door-components/images/upload.png"/>
-    <figcaption>upload</figcaption>
-  <figure>
 </section>
