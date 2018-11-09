@@ -14,4 +14,3 @@
 <model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
   <view style="height:400px;background-color:red;"></view>
 </model-mask>
-<add-image title="2222"></add-image>
