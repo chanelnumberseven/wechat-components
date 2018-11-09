@@ -29,6 +29,17 @@
   </ul>
 </section>
 <section>
+ <h2>slot</h2>
+ <ul>
+   <li>
+     <dl>
+       <dt>title</dt>
+       <dd>自定义标题</dd>
+     </dl>
+   </li>
+ </ul>
+</section>
+<section>
  <h2>event</h2>
  <ul>
    <li>
