@@ -21,6 +21,10 @@
 .bottom .tab-nav{
   bottom:0;
 }
+.free .tab-nav-item{
+  flex:0 0 auto;
+  padding:0 40rpx;
+}
 .tab-nav-item{
   position:relative;
   flex:1;

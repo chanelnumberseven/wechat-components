@@ -3,6 +3,10 @@ Component({
     multipleSlots: true
   },
   properties: {
+    type: {
+      type: String,
+      value: ''
+    },
     length:{
       type:Number,
       value:0

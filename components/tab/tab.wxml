@@ -1,13 +1,15 @@
 <view class="tab" style="{{css}}">
-  <view wx:if="{{position==='top'}}" class="tab-nav">
-    <view 
-    class="tab-nav-item {{currentPageIndex==index?'active':''}}" 
-    data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" 
-    bindtap="tab">
-      <view wx-if="{{items[index]!=null}}" class="tab-nav-text">{{item[itemKey]||item}}</view>
-      <slot name="tab-nav-{{index}}"></slot>
+  <scroll-view wx:if="{{position==='top'}}" scroll-x="{{true}}">
+    <view class="tab-nav {{type}}">
+      <view 
+      class="tab-nav-item {{currentPageIndex==index?'active':''}}" 
+      data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" 
+      bindtap="tab">
+        <view wx-if="{{items[index]!=null}}" class="tab-nav-text">{{item[itemKey]||item}}</view>
+        <slot name="tab-nav-{{index}}"></slot>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 
   <slot></slot>
 
@@ -17,13 +19,15 @@
     </swiper-item>
   </swiper>
 
-  <view wx:if="{{position==='bottom'}}" class="tab-nav">
-    <view 
-    class="tab-nav-item {{currentPageIndex==index?'active':''}}" 
-    data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" 
-    bindtap="tab">
-      <view wx-if="{{items[index]!=null}}" class="tab-nav-text">{{item[itemKey]||item}}</view>
-      <slot name="tab-nav-{{index}}"></slot>
+  <scroll-view wx:if="{{position==='bottom'}}" scroll-x="{{true}}">
+    <view class="tab-nav {{type}}">
+      <view 
+      class="tab-nav-item {{currentPageIndex==index?'active':''}}" 
+      data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" 
+      bindtap="tab">
+        <view wx-if="{{items[index]!=null}}" class="tab-nav-text">{{item[itemKey]||item}}</view>
+        <slot name="tab-nav-{{index}}"></slot>
+      </view>
     </view>
-  </view>
+  </scroll-view>
 </view>
