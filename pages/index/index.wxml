@@ -12,5 +12,5 @@
   </view>
 </view>
 <model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
-  <view style="height:400px;background-color:red;"></view>
+  <view style="height:400px;background-color:red;">2222</view>
 </model-mask>

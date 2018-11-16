@@ -6,10 +6,14 @@
 }
 .tab-nav{
   display:flex;
+  align-items: center;
   width:100%;
+  min-height:98rpx; 
+  padding:10rpx 0;
   text-align:center;
-  font-size:15px;
+  font-size:30rpx;
   color:#333;
+  background-color:#fff;
 }
 .top .tab-nav{
   top:0;

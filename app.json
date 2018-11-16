@@ -1,10 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
-    "components/loading/loading",
-    "components/mask/mask",
-    "components/tab/tab",
-    "components/add-image/add-image"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
