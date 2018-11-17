@@ -3,9 +3,9 @@
   <view class="form-image" wx:for="{{items}}" style="{{'background-image:url('+item.lineOnUrl+')'}}" data-url="{{item.lineOnUrl}}" wx:key="{{index}}" bindtap="remove">
     <view wx:if="{{item.state==='success'}}" class="form-image-delete"></view>
     <view wx:elif="{{item.state==='fail'}}" class="form-image-text">上传失败</view>
-    <model-icon wx:else type="loading" css="font-size:20px;display:block;"></model-icon>
+    <view wx:else class="form-image-loading"></view>
   </view>
-  <view class="form-image" style="border:1rpx solid #ccc;" hidden="{{items.length>=maxLength}}" bindtap="add">
+  <view class="form-image" hidden="{{items.length>=maxLength}}" bindtap="add">
     <view class="add" css="font-size:20px;display:block;"></view>
   </view>
 </view>
