@@ -1,16 +1,18 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<model-loading code="{{loading.code}}">
+  <view class="container">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="usermotto" bindtap='show'>
+      <text class="user-motto">{{motto}}</text>
+    </view>
   </view>
-  <view class="usermotto" bindtap='show'>
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
-<model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
-  <view style="height:400px;background-color:red;">2222</view>
-</model-mask>
+  <model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
+    <view style="height:400px;background-color:red;">2222</view>
+  </model-mask>
+</model-loading>

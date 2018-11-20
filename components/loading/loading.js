@@ -2,7 +2,7 @@ Component({
   properties: {
     code: {
       type: null,
-      value: 0
+      value: -1
     },
     loadingCode:{
       type:Number,

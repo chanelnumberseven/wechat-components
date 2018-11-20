@@ -1,10 +1,11 @@
-<view wx:if="{{code===loadingCode}}" class="model-loading" style="{{css}}">
-  <model-icon type="loading" css="{{loadingCss}}">加载中...</model-icon>
+<view class="loading-wrapper">
+  <view class="loading-bar {{code===loadingCode?'animation-loading':'complete'}}"></view>
 </view>
-<slot wx:elif="{{code===successCode}}"></slot>
+<slot wx:if="{{code===successCode||code===loadingCode}}"></slot>
 <view wx:else class="model-loading" style="background-color:#fff;font-size:14px;">
   <view>错误({{code}})</view>
   <view style="padding:0 10% 0 10%;">
-    由于{{message}}，导致页面无法显示，您可以返回上一步，或者<text bindtap="reloading">重新加载</text>
+    由于{{message}}，导致页面无法显示，您可以返回上一步，或者
+    <text bindtap="reloading">重新加载</text>
   </view>
 </view>
