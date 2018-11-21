@@ -1,7 +1,8 @@
 <h1>validate</h1>
 <section>
   <h2>usage</h2>
-  <pre>import Validate from 'validate'
+  <pre>
+    import Validate from 'validate'
     let validate = new Validate();
     validate.validate({
       phone:{
