@@ -3,6 +3,7 @@
     "model-mask":"/components/mask/mask",
     "model-tab":"/components/tab/tab",
     "add-image":"/components/add-image/add-image",
-    "model-loading":"/components/loading/loading"
+    "model-loading":"/components/loading/loading",
+    "no-more":"/components/no-more/no-more"
   }
 }

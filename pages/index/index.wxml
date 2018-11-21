@@ -12,7 +12,8 @@
       <text class="user-motto">{{motto}}</text>
     </view>
   </view>
-  <model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
-    <view style="height:400px;background-color:red;">2222</view>
-  </model-mask>
+  <no-more title-css="background-color:#fff;"></no-more>
 </model-loading>
+<model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
+    <view style="height:400px;background-color:red;">2222</view>
+</model-mask>

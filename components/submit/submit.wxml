@@ -1,0 +1,8 @@
+<view class="parent" style="{{css}}">
+  <view class="child-content">
+    <slot name="content"></slot>
+  </view>
+  <view class="child-bottom">
+    <slot name="bottom"></slot>
+  </view>
+</view>
