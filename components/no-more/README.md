@@ -1,0 +1,68 @@
+<h1>mask</h1>
+<section>
+  <h2>properties</h2>
+  <ul>
+    <li>
+      <dl>
+        <dt>visible</dt>
+        <dd>type: Boolean</dd>
+        <dd>value:false</dd>
+        <dd>控制mask组件的显示与关闭</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>position</dt>
+        <dd>type: String</dd>
+        <dd>value:'middle'</dd>
+        <dd>定义mask子集的位置</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>css</dt>
+        <dd>type: String</dd>
+        <dd>value:''</dd>
+        <dd>更改遮罩的样式</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>auto-close</dt>
+        <dd>type: Boolean</dd>
+        <dd>value:true</dd>
+        <dd>是否开启自动关闭功能</dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>events</h2>
+  <ul>
+    <li>
+      <dl>
+        <dt>show</dt>
+        <dd>当mask显示时会触发show事件</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>hide</dt>
+        <dd>当mask隐藏时会触发hide事件</dd>
+      </dl>
+    </li>
+  </ul>
+</section>
+<section>
+  <h2>example</h2>
+  <pre>
+    &lt;model-mask 
+    visible="{{true}}" 
+    auto-close="{{false}}" 
+    position="bottom"
+    bindhide="hide"
+    bindshow="show"&gt;
+      子内容
+    &lt;/model-mask&gt;
+  </pre>
+</section>

@@ -1,0 +1,3 @@
+<view class="no-more">
+  <view class="no-more-text">{{title}}</view>
+</view>

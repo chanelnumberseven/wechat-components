@@ -1,0 +1,24 @@
+.no-more{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  padding:30rpx;
+  text-align: center;
+}
+.no-more::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:20%;
+  right:20%;
+  z-index:-1;
+  height:1rpx;
+  background-color:#ccc;
+}
+.no-more-text{
+  padding:0 30rpx;
+  font-size:24rpx;
+  color:#999;
+  background-color:#f0f4f7;
+}
