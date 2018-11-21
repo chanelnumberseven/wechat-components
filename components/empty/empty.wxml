@@ -1,0 +1,6 @@
+<!--pages/components/empty/empty.wxml-->
+<view class="empty" style="{{css}}">
+  <view class="empty-figure"></view>
+  <view class="empty-title">{{title||'还没有任何内容'}}</view>
+  <slot></slot> 
+</view>

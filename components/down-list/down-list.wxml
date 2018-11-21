@@ -1,0 +1,9 @@
+<view class="model-down-list" style="{{css}}">
+  <view class="menu {{listVisible?'down':'up'}} {{disabled?'disabled':''}}" bindtap="block">
+    <slot name="menu"></slot>
+  </view>
+  <view class="list" hidden="{{listVisible}}">
+    <slot name="list"></slot>
+  </view>
+</view>
+ 
