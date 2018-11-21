@@ -1,9 +1,7 @@
 <h1>validate</h1>
 <section>
   <h2>usage</h2>
-  <pre>
-    import Validate from 'validate'
-
+  <pre>import Validate from 'validate'
     let validate = new Validate();
     validate.validate({
       phone:{
@@ -15,6 +13,8 @@
           '^1[3456789]',
           function(obj){}
         ]
+      },
+      onError:function(value){
       },
       onSubmit:function(){
         // submit your form
@@ -58,6 +58,12 @@
       </dl>
       <p>你可以添加任意类型的验证类型，对于未内置的验证类型，你必须明确指出该验证类型的验证规则(rule)的值和验证提示</p>
       <p>对于重复的验证类型，以phone为例可添加phoneX,X代表一个数字即可继承phone的验证规则</p>
+    </li>
+    <li>
+      <dl>
+        <dt>onError</dt>
+        <dd>当表单验证不通过时的回调</dd>
+      </dl>
     </li>
     <li>
       <dl>
