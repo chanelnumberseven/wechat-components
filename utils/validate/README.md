@@ -58,6 +58,7 @@
       </dl>
       <p>你可以添加任意类型的验证类型，对于未内置的验证类型，你必须明确指出该验证类型的验证规则(rule)的值和验证提示</p>
       <p>对于重复的验证类型，以phone为例可添加phoneX,X代表一个数字即可继承phone的验证规则</p>
+      <p>内置的验证类型：noEmpty,code,password,repeat</p>
     </li>
     <li>
       <dl>
