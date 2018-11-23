@@ -1,4 +1,4 @@
-<view wx:if="{{visible}}" style="{{css}}" class="model-mask {{animation}}" bindtap='hide'>
+<view wx:if="{{visible}}" style="{{css}}" class="model-mask {{animation?animation:''}}" bindtap='hide' catchtouchmove='true'>
   <view class="model-mask-content {{position}}">
     <slot></slot>
   </view>

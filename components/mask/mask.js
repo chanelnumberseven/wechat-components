@@ -3,18 +3,23 @@ Component({
     visible: {
       type: Boolean,
       value: false,
-      observer:function(newValue,oldValue){
-        if(!newValue){
-          this.triggerEvent('hide', {}, {
+      observer: function(newValue, oldValue) {
+        if (!newValue) {
+          this.triggerEvent('hide', {
+            value: newValue
+          }, {
             bubbles: true,
             composed: true
           })
-        }else{
+        } else {
           this.triggerEvent('show', {}, {
             bubbles: true,
             composed: true
           })
         }
+        this.triggerEvent('toggle', {
+          value: newValue
+        }, {})
       }
     },
     css: {
@@ -25,16 +30,17 @@ Component({
       type: null,
       value: true
     },
-    position:{
-      type:String,
-      value:'middle'
+    position: {
+      type: String,
+      value: 'middle'
+    },
+    animation:{
+      type:null,
+      value:''
     }
   },
-  data: {
-    animation: 'animation-fade-in'
-  },
   methods: {
-    hide: function () {
+    hide: function() {
       if (this.data.autoClose) {
         this.setData({
           visible: false

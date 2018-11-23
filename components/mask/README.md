@@ -34,11 +34,25 @@
         <dd>是否开启自动关闭功能</dd>
       </dl>
     </li>
+    <li>
+      <dl>
+        <dt>animation</dt>
+        <dd>type:null</dd>
+        <dd>value:''</dd>
+        <dd>赋予对应的值开启对应的动画，目前仅支持animation-fade-in</dd>
+      </dl>
+    </li>
   </ul>
 </section>
 <section>
   <h2>events</h2>
   <ul>
+    <li>
+      <dl>
+        <dt>toogle</dt>
+        <dd>当mask显示隐藏时会触发toggle事件</dd>
+      </dl>
+    </li>
     <li>
       <dl>
         <dt>show</dt>
