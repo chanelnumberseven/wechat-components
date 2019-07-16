@@ -27,7 +27,7 @@ let config = {
     rule: [
       false,
       false,
-      function (obj) {
+      function(obj) {
         let values = obj.value.split(' ');
         return values[0] === values[1];
       }
@@ -47,52 +47,7 @@ let config = {
 
 // validate constructor
 function Validate() {
-  this.count = 60;
-  this.countLimit = 60;
-  this.timeId = null;
-}
-
-// get validate code
-Validate.prototype.getCode = function (obj) {
-
-  // validate the phone number
-  let phone = Object.assign({}, config.phone, { value: obj.phone });
-  if (!isCorrect(phone)) {
-    errorTip(phone);
-    return;
-  }
-
-  // avoid count many times
-  if (this.timeId !== null) {
-    return;
-  }
-
-  // improve user experience 
-  obj.model.setData({
-    getCodeBtnText: (--this.count) + 's',
-    getCodeBtnClass: 'grey'
-  });
-
-  // update the getCodeBtn's text;
-  this.timeId = setInterval(() => {
-    if (this.count <= 1) {
-      obj.model.setData({
-        getCodeBtnClass: '',
-        getCodeBtnText: '获取验证码'
-      })
-      this.count = this.countLimit;
-      clearInterval(this.timeId);
-      this.timeId = null;
-    } else {
-      obj.model.setData({
-        getCodeBtnText: (--this.count) + 's',
-        getCodeBtnClass: 'grey'
-      });
-    }
-  }, 1000);
-
-  // get the validate code
-  obj.getCode && obj.getCode()
+  
 }
 
 // validate the value
@@ -143,7 +98,7 @@ function errorTip(obj, errorFn) {
 }
 
 // the first time validate
-Validate.prototype.validate = function (option) {
+Validate.prototype.validate = function(option) {
   var copy = this.option = {},
     keys = Object.keys(option),
     l = keys.length,
@@ -158,7 +113,7 @@ Validate.prototype.validate = function (option) {
   };
 
   // filter the property which's value type is a function
-  this.keys = keys.filter(function (value, index) {
+  this.keys = keys.filter(function(value, index) {
     return value.slice(0, 2) !== 'on';
   });
   normalValidate.call(this, option);

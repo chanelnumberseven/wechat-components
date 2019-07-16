@@ -1,0 +1,14 @@
+<!--pages/components/base/form-item/form-item.wxml-->
+<label wx:if="{{type=='normal'}}" style="{{css}}" class="form-item {{type}}" bindtap="tap">
+  <text style="{{labelStyle}}">
+   <text wx:if="{{require}}" style="color:#f88383;">*</text>{{label}}
+  </text>
+  <view class="form-item_body"><slot name="body"></slot></view>
+  <slot name="footer"></slot>
+  <slot></slot>
+</label>
+<label wx:elif="{{type=='classic'}}" class="form-item {{type}}" style="{{css}}" bindtap="tap">
+  <view style="margin-right:12px;"><slot name="header"></slot></view>  
+  <view style="flex:1;"><slot name="body"></slot></view>  
+  <slot></slot>  
+</label>

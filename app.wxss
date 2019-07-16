@@ -1,10 +1,173 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+/*
+ *样式重置 
+ */
+
+textarea, input, label, picker, form, button, text, navigator, page, view,
+view::before, view::after {
   box-sizing: border-box;
-} 
+}
+input {
+  display:block;
+  width:100%;
+}
+page {
+  height: 100%;
+  color: #333;
+}
+
+navigator:hover {
+  opacity: 1;
+}
+
+input:placeholder {
+  color: #ababab;
+}
+
+navigator view, navigator text {
+  pointer-events: none;
+}
+
+/*
+ * checkbox
+ */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%; /* 圆角 */
+  width: 18px; /* 背景的宽 */
+  height: 18px; /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: #1ebf97;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 18px; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 18px; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 18px;
+  text-align: center;
+  font-size: 15px; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+/*
+ * 通用样式
+ */
+
+.glb-mask, .glb-full-box, .glb-full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  z-index: 1000;
+}
+
+.glb-full-box {
+  position: absolute;
+}
+
+.glb-mask {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.glb-for-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  z-index: -1;
+}
+
+/*
+ * layout（布局）
+ */
+
+.layout-container {
+  position: relative;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+}
+
+.layout-tr-center, .layout-tr, .layout-tr-top {
+  display: flex;
+}
+
+.layout-tr-center, .layout-tr {
+  align-items: center;
+}
+
+.layout-tr-center {
+  justify-content: center;
+}
+
+.layout-tr.vertical {
+  flex-direction: column;
+}
+
+.layout-td {
+  flex: 1;
+}
+
+.layout-td-auto {
+  flex: 0 0 auto;
+}
+
+/*
+ * model-btn
+ */
+
+button::after {
+  display: none;
+}
+
+.model-btn {
+  width: 100%;
+  color: #fff;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #1EBF96;
+  border-radius: 25px;
+}
+.model-btn.active{
+  background-color:#1AA682;
+}
+.model-btn.disabled{
+  background-color:#1EBF96;
+}
+
+.model-btn.plain-primary {
+  background-color: rgba(0, 0, 0, 0);
+  color: #1ebf97;
+}
+
+.model-btn.plain {
+  background-color: rgba(0, 0, 0, 0);
+  color: #e4e4e4;
+}
+
+.model-btn.default {
+  background-color: #dfdfdf;
+  color: #999;
+}

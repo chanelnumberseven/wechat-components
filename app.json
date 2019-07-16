@@ -2,6 +2,14 @@
   "pages": [
     "pages/index/index"
   ],
+  "usingComponents": {
+    "model-headline": "/components/headline/headline",
+    "model-icon": "/components/icon/icon",
+    "model-card": "/components/card/card",
+    "verification-code": "/components/verification-code/verification-code",
+    "form-item": "/components/form-item/form-item",
+    "model-loading": "/components/loading/loading"
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

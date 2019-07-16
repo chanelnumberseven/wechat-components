@@ -1,0 +1,7 @@
+.button{
+  color:#1EBF96;
+  font-size:15px;
+}
+.button.grey{
+  color:#999;
+}

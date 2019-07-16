@@ -1,0 +1,3 @@
+<button style="{{css}}" 
+class="button {{className}}" 
+loading="{{loading}}" disabled="{{disabled}}" bindtap="getCode">{{text}}</button>

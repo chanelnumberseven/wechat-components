@@ -7,10 +7,6 @@ Component({
       type: String,
       value: ''
     },
-    length:{
-      type:Number,
-      value:0
-    },
     items: {
       type: Array,
       value: []
@@ -24,6 +20,10 @@ Component({
       value: 0
     },
     css: {
+      type: String,
+      value: ''
+    },
+    swiperCss: {
       type: String,
       value: ''
     },
@@ -41,7 +41,8 @@ Component({
     change: function (e) {
       this.setData({
         currentPageIndex: e.detail.current
-      })
+      });
+      this.triggerEvent('change', { index: e.detail.current}, {});
     }
   }
 })
