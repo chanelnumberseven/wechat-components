@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<model-loading code="{{loading.code}}">
+<!-- <model-loading code="{{loading.code}}">
   <view class="container">
     <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -16,4 +16,6 @@
 </model-loading>
 <model-mask visible="{{visible}}" position="top" bindhide="hide" bindshow="visible">
     <view style="height:400px;background-color:red;">2222</view>
-</model-mask>
+</model-mask> -->
+<model-tab items="{{[1,2]}}">
+</model-tab>

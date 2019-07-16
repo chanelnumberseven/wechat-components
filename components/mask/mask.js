@@ -40,6 +40,7 @@ Component({
     }
   },
   methods: {
+    none:function(){},
     hide: function() {
       if (this.data.autoClose) {
         this.setData({
