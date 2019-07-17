@@ -1,3 +1,6 @@
-.headline{
-  margin-bottom:.4em;
+.headline {
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  line-height:1.618;
+  color: #333;
 }

@@ -1,0 +1,3 @@
+<view class="note" style="{{styles[level-1]}}{{css}}">
+  <slot></slot>
+</view>

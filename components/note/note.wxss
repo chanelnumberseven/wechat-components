@@ -1,0 +1,5 @@
+.note {
+  margin: 0.4em 0;
+  line-height:1.618;
+  color: #999;
+}
