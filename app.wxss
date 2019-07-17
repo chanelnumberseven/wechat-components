@@ -5,6 +5,7 @@
 textarea, input, label, picker, form, button, text, navigator, page, view,
 view::before, view::after {
   box-sizing: border-box;
+  line-height:1.618;
 }
 input {
   display:block;

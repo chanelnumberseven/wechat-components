@@ -1,0 +1,4 @@
+<view style="position:relative;{{default}}{{success}}{{css}}">
+  <model-icon wx:if="{{loadState!==1}}" type="loading" css="position:absolute;top:50%;left:50%;margin:-0.5em 0 0 -0.5em;font-size:30px;"></model-icon>
+  <image src="{{src}}" style="{{default}}{{success}}{{css}}" binderror="fail" bindload="load"></image>
+</view>
