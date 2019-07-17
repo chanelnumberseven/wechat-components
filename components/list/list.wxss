@@ -1,0 +1,7 @@
+.ml-item{
+  display:flex;
+  padding:12px 0;
+  text-align: left;
+  word-break: break-all;
+  font-size:14px;
+}

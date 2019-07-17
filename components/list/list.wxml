@@ -1,0 +1,6 @@
+<view class="model-list" wx:if="{{list}}">
+  <view class="ml-item" wx:key="{{index}}" wx:for="{{list}}">
+    <view style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{index}}</view>
+    <view>{{item}}</view>
+  </view>
+</view>
