@@ -1,0 +1,4 @@
+<view class="wrapper">
+  <textarea placeholder="{{placeholder}}" value="{{value}}" bindinput="check" maxlength="{{max}}"></textarea>
+  <view class="count">{{current}}/{{max}}</view>
+</view>
