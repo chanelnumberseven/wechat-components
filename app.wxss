@@ -3,10 +3,3 @@
 @import './wxss/layout.wxss';
 @import './wxss/button.wxss';
 @import './wxss/checkbox.wxss';
-
-
-
-
-
-
-

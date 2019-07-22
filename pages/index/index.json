@@ -1,9 +1,13 @@
 {
-  "usingComponents":{
-    "model-mask":"/components/mask/mask",
-    "model-tab":"/components/tab/tab",
-    "add-image":"/components/add-image/add-image",
-    "model-loading":"/components/loading/loading",
-    "no-more":"/components/no-more/no-more"
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "首页",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "model-mask": "/components/mask/mask",
+    "model-tab": "/components/tab/tab",
+    "add-image": "/components/add-image/add-image",
+    "model-loading": "/components/loading/loading",
+    "no-more": "/components/no-more/no-more"
   }
 }

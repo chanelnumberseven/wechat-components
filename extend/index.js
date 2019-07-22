@@ -1,9 +1,17 @@
-import Validate from './validate'
+import Validate from './components/validate'
+import Request from './components/request'
+import BeuatyRequest from './components/beauty-request'
+import {host} from './../host/index'
+
 const prePage=Page;
 const preComponent=Component;
+const REQUESTCONFIG = {
+  baseURL:host
+};
 
-Page=function(option){
-  option.validate=new Validate();
+Page=function(option={}){
+  option.validate = new Validate(REQUESTCONFIG);
+  
   // 双向绑定扩展
   option.assignValue=function(e){
     console.log(e);
@@ -12,9 +20,12 @@ Page=function(option){
       [name]:e.detail.value
     });
   };
+  // http请求
+  option.beuatyRequest=new BeuatyRequest();
+  option.beuatyRequest.init(REQUESTCONFIG);
   return prePage(option);
 }
-Component = function (option) {
+Component = function (option={}) {
   option.validate = new Validate();
   return preComponent(option);
 }
