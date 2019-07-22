@@ -28,7 +28,7 @@
   position:relative;
   flex:1;
 }
-.tab-nav-item+.tab-nav-item::before{
+.separator .tab-nav-item+.tab-nav-item::before{
   content:' ';
   position:absolute;
   left:0;

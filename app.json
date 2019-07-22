@@ -8,6 +8,7 @@
     "model-icon": "/components/icon/icon",
     "model-card": "/components/card/card",
     "model-image": "/components/image/image",
+    "model-tab": "/components/tab/tab",
     "verification-code": "/components/verification-code/verification-code",
     "form-item": "/components/form-item/form-item",
     "model-loading": "/components/loading/loading"

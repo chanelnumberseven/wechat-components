@@ -3,13 +3,15 @@ Component({
     multipleSlots: true
   },
   properties: {
-    type: {
-      type: String,
-      value: ''
+    separator:{
+      type:Boolean
+    },
+    length: {
+      type:Number
     },
     items: {
       type: Array,
-      value: []
+      value:null
     },
     itemKey: {
       type: String,
@@ -27,6 +29,9 @@ Component({
       type: String,
       value: ''
     },
+    tabNavCss:{
+      type:String
+    },
     position: {
       type: String,
       value: 'top'
@@ -42,7 +47,7 @@ Component({
       this.setData({
         currentPageIndex: e.detail.current
       });
-      this.triggerEvent('change', { index: e.detail.current}, {});
+      this.triggerEvent('change', { index: e.detail.current }, {});
     }
   }
 })
