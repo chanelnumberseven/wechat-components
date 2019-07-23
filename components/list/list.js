@@ -2,6 +2,9 @@ Component({
   properties:{
     list:{
       type:[Array,Object]
+    },
+    valueWidth:{
+      type:String
     }
   }
 })

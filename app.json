@@ -5,6 +5,8 @@
   ],
   "usingComponents": {
     "model-headline": "/components/headline/headline",
+    "model-para": "/components/para/para",
+    "model-note": "/components/note/note",
     "model-icon": "/components/icon/icon",
     "model-card": "/components/card/card",
     "model-image": "/components/image/image",

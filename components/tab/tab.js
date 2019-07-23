@@ -35,13 +35,18 @@ Component({
     position: {
       type: String,
       value: 'top'
+    },
+    swiper:{
+      type:Boolean,
+      value:true
     }
   },
   methods: {
     tab: function (e) {
       this.setData({
         currentPageIndex: e.currentTarget.dataset.index
-      })
+      });
+      if (!this.data.swiper) this.triggerEvent('change', { index: e.currentTarget.dataset.index }, {});
     },
     change: function (e) {
       this.setData({

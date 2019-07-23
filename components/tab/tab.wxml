@@ -9,7 +9,7 @@
   </scroll-view>
 
   <slot></slot>
-  <view style="flex:1">
+  <view wx:if="{{swiper}}" style="flex:1">
     <swiper style="height:calc(100vh - 50px);{{swiperCss}}" current="{{currentPageIndex}}" bindchange="change">
       <swiper-item wx:for="{{items||length}}" wx:key="{{index}}">
         <view style="height:100%;" scroll-y="true">
@@ -17,6 +17,11 @@
         </view>
       </swiper-item>
     </swiper>
+  </view>
+  <view wx:else style="flex:1" style="height:calc(100vh - 50px);{{swiperCss}}">
+    <view hidden="{{currentPageIndex!==index}}" wx:for="{{items||length}}" wx:key="{{index}}" style="height:100%;" scroll-y="true">
+      <slot name="tab-{{index}}"></slot>
+    </view>
   </view>
 
   <scroll-view wx:if="{{position==='bottom'}}" scroll-x="{{true}}">

@@ -49,8 +49,8 @@ Request.prototype.getParamsUrl=function(url,params){
     if (val != null) value.push(`${encodeURIComponent(key)}=${encodeURIComponent(val)}`);
   });
   if(!value.length) return url;
-  if(!urlParam) return `${url.replace(/?/g,'')}?${value.join('&')}`;
-  return `${url.replace(/?/g,'')}?${value.join('&')}&${urlParam}`;
+  if(!urlParam) return `${url.replace(/\?/g,'')}?${value.join('&')}`;
+  return `${url.replace(/\?/g,'')}?${value.join('&')}&${urlParam}`;
 };
 Request.prototype.get=function(config){
   config.method='GET';
