@@ -4,6 +4,9 @@ Component({
       type:Number,
       value:300
     },
+    mini:{
+      type: Boolean
+    },
     css:{
       type:String
     }
@@ -43,13 +46,21 @@ Component({
     destroy: function() {
       clearInterval(this.timerId);
     },
+    minify:function(hours,minuts,seconds){
+      if(!this.data.mini) return `${this.to24(hours)}时${this.to24(minuts)}分${this.to24(seconds)}秒`;
+      hours = hours ? `${this.to24(hours)}时`:'';
+      minuts = minuts ? `${this.to24(minuts)}分`:'';
+      seconds = `${this.to24(seconds)}秒`;
+      return `${hours}${minuts}${seconds}`;
+    },
     toClock: function() {
+      let mini=this.data.mini;
       let count = this.count;
       let hours = parseInt(count / 3600);
       let minuts = parseInt(count % 3600 / 60);
-      let second = parseInt(count % 60);
+      let seconds = parseInt(count % 60);
       this.setData({
-        timeString: `${this.to24(hours)}时${this.to24(minuts)}分${this.to24(second)}秒`
+        timeString: this.minify(hours,minuts,seconds)
       });
     }
   }
