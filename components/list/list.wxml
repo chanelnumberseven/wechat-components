@@ -1,6 +1,12 @@
-<view class="model-list" wx:if="{{list}}">
-  <view class="ml-item" wx:key="{{index}}" wx:for="{{list}}">
-    <view style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||index}}</view>
-    <view style="text-align:right;width:{{valueWidth}};">{{item.value||item}}</view>
-  </view>
+<view class="model-list" style="{{css}}" wx:if="{{list}}">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <navigator url="{{item.link}}" wx:if="{{item.link}}" class="ml-item ml-item-link">
+      <view style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||index}}</view>
+      <view style="text-align:right;width:{{valueWidth}};">{{item.value||item}}</view>
+    </navigator>
+    <view wx:else class="ml-item" data-event="{{item.event}}" bindtap="tap">
+      <view style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||index}}</view>
+      <view style="text-align:right;width:{{valueWidth}};">{{item.value||item}}</view>
+    </view>
+  </block>
 </view>

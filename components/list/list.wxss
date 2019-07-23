@@ -1,7 +1,19 @@
 .ml-item{
   display:flex;
+  align-items: center;
   padding:12px 0;
   text-align: left;
   word-break: break-all;
   font-size:14px;
+}
+.ml-item-link:after{
+    content:'';
+    display:inline-block;
+    height: 8px;
+    width: 8px;
+    border-width: 2px 2px 0 0;
+    border-color: #999;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 }
