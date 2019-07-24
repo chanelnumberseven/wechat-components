@@ -7,10 +7,13 @@ Component({
     css: {
       type: String,
       value: ''
+    },
+    defaultSrc:{
+      type:String,
+      value: './default.svg'
     }
   },
   data:{
-    defaultSrc:'./default.svg',
     loadState:0,
     default:'display:block;height:100px;width:100px;background-color:#f2f2f2;',
     success:'background-color:rgba(0,0,0,0);'
