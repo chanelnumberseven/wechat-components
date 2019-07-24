@@ -1,0 +1,4 @@
+<view class="ml-item {{url||link?'ml-item-link':''}} {{border?'border':''}}">
+  <slot name="label"></slot>
+  <slot name="value"></slot>
+</view>
