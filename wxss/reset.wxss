@@ -2,7 +2,7 @@
  *样式重置 
  */
 
-textarea, input, label, picker, form, button, text, navigator, page, view,
+checkbox-group,textarea, input, label, picker, form, button, text, navigator, page, view,
 view::before, view::after {
   box-sizing: border-box;
   line-height:1.618;
@@ -14,7 +14,7 @@ input {
 page {
   height: 100%;
   color: #333;
-  background-color:#fafafa;
+  background-color:#f2f3f4;
 }
 picker{
   line-height: 48px;
@@ -22,11 +22,6 @@ picker{
 navigator:hover {
   opacity: 1;
 }
-
-input:placeholder {
-  color: #ababab;
-}
-
 navigator view, navigator text {
   pointer-events: none;
 }

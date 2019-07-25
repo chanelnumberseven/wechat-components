@@ -1,7 +1,13 @@
 <view class="model-list" style="{{css}}">
-  <list-item wx:for="{{list}}" wx:key="{{index}}" url="{{item.link}}" data-event="{{item.event}}" bindtap="tap">
-    <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||index}}</view>
-    <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item.value||item}}</view>
+  <list-item border="{{border}}" wx:for="{{list}}" wx:key="{{index}}" url="{{item.link}}" data-event="{{item.event}}" bindtap="tap">
+    <block wx:if="{{item.label!==undefined}}">
+      <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||'--'}}</view>
+      <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item.value||'--'}}</view>
+    </block>
+    <block wx:else>
+      <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{index||'--'}}</view>
+      <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item||'--'}}</view>
+    </block>
   </list-item>
   <slot></slot>
 </view>

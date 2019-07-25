@@ -8,6 +8,9 @@ Component({
     },
     valueWidth:{
       type:String
+    },
+    border:{
+      type:Boolean
     }
   },
   methods:{
