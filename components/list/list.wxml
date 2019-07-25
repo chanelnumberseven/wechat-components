@@ -1,13 +1,7 @@
-<view class="model-list" style="{{css}}">
-  <list-item border="{{border}}" wx:for="{{list}}" wx:key="{{index}}" url="{{item.link}}" data-event="{{item.event}}" bindtap="tap">
-    <block wx:if="{{item.label!==undefined}}">
-      <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||'--'}}</view>
-      <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item.value||'--'}}</view>
-    </block>
-    <block wx:else>
-      <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{index||'--'}}</view>
-      <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item||'--'}}</view>
-    </block>
+<view class="model-list" style="{{css}}" wx:if="{{list}}">
+  <list-item border="{{index>=listSelf.length-1?false:border}}" wx:for="{{listSelf}}" wx:key="{{index}}" url="{{item.link}}" data-event="{{item.event}}" bindtap="tap">
+    <view slot="label" style="flex:1;min-width:4em;padding-right:1em;color:#999;">{{item.label||'--'}}</view>
+    <view slot="value" style="text-align:right;width:{{valueWidth}};">{{item.value||'--'}}</view>
   </list-item>
   <slot></slot>
 </view>
