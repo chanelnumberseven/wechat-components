@@ -23,7 +23,7 @@ Component({
     init:function(){
       let agent = [];
       let list=this.data.list;
-      if (typeof list === 'object') {
+      if (list.nv_constructor === 'Object') {
         Object.keys(list).forEach(function (key) {
           agent.push({
             label: key,

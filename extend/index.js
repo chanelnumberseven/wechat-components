@@ -21,8 +21,8 @@ Page=function(option={}){
     });
   };
   // http请求
-  option.beuatyRequest=new BeuatyRequest();
-  option.beuatyRequest.init(REQUESTCONFIG);
+  option.beautyRequest=new BeuatyRequest();
+  option.beautyRequest.init(REQUESTCONFIG);
   return prePage(option);
 }
 Component = function (option={}) {
