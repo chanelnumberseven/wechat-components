@@ -2,15 +2,13 @@ Component({
   properties: {
     code: {
       type: null,
-      value: -1
-    },
-    loadingCode:{
-      type:Number,
-      value:-1
-    },
-    successCode:{
-      type: Number,
-      value: 10000
+      value: -1,
+      observer:function(value){
+        let data=this.data;
+        this.setData({
+          contentShow:value===data.loadingCode||data.successCode.indexOf(value)!==-1
+        })
+      }
     },
     message: {
       type: String,
@@ -19,11 +17,12 @@ Component({
     css: {
       type: String,
       value: ''
-    },
-    loadingCss:{
-      type: String,
-      value: 'font-size:30px'
     }
+  },
+  data:{
+    contentShow:true,
+    loadingCode:-1,
+    successCode:[10000,200]
   },
   methods: {
     reloading: function () {
