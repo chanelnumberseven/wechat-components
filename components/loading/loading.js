@@ -14,6 +14,9 @@ Component({
       type: String,
       value: ''
     },
+    noError:{
+      type:Boolean
+    },
     css: {
       type: String,
       value: ''

@@ -1,4 +1,5 @@
 import Request from './request'
+const HTTPSUCCESSSTATE = [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 301, 302, 303, 304, 305, 306, 307, 308, 309];
 const config = {
   getCode: function(data) {
     return data.Code||'未知错误'
@@ -11,18 +12,20 @@ const config = {
     Data: null,
     Message: ''
   },
-  successCode: [200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 301, 302, 303, 304, 305, 306, 307, 308, 309, 10000]
+  successCode: [10000]
 };
 
 function setPageState(page,code,message){
   if(!page) return;
   if(code===-1){
     page.setData({
-      loading:true
+      loading:true,
+      disabled:true
     })
   }else{
     page.setData({
-      loading: false
+      loading: false,
+      disabled:false
     })
   }
   page.setData({
@@ -69,27 +72,26 @@ BeautyRequest.prototype.requestFail = function(error,obj,reject) {
   });
   reject(error);
 };
-BeautyRequest.prototype.beautyRequest=function(obj,page,method){
-  let successCode = this.successCode;
-  let url = obj.url;
+BeautyRequest.prototype.beautyRequest=function(option,page,method){
   let that = this;
   setPageState(page,-1,'');
   return new Promise((resolve, reject) => {
-    this.request[method]({
-      url: obj.url,
-      data:obj.data,
-      success: function (res) {
-        res=Object.assign({},that.resTemplate,res);
-        that.handleResponse(res, obj, page, resolve, reject);
-      },
-      fail: function (error) {
-        that.requestFail(error, obj, reject);
-        setPageState(page,'error',error.errMsg||error.toString());
-      },
-      complete: function () {
-        if (obj.complete) obj.complete();
+    let agent = Object.assign({}, this.requestOption, option);
+    agent.success = (res) => {
+      let httpState = res.statusCode;
+      if (HTTPSUCCESSSTATE.indexOf(httpState) === -1) {
+        this.requestFail(httpState,option, reject);
+        setPageState(page, httpState, httpState);
+      } else {
+        let data = Object.assign({}, this.resTemplate, res.data);
+        this.handleResponse(data,option, page, resolve, reject);
       }
-    })
+    };
+    agent.fail = (error) => {
+      this.requestFail(error,option,reject);
+      setPageState(page, 'error', error.errMsg || error.toString());
+    };
+    this.request[method](agent);
   });
 };
 ['Get','Put','Post','Delete'].forEach(function(item){
@@ -116,6 +118,7 @@ BeautyRequest.prototype.beautyAll = function (obj,page){
 };
 // 请求构造函数的初始化
 BeautyRequest.prototype.init = function(option){
-  this.request = new Request(option||this.requestOption);
+  this.requestOption=option||this.requestOption;
+  this.request = new Request(this.requestOption);
 }
 export default BeautyRequest

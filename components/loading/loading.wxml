@@ -1,6 +1,6 @@
-<view wx:if="{{contentShow}}" style="position:relative;{{css}}">
-  <view class="glb-full-box layout-tr-center">
-    <image wx:if="{{code===loadingCode}}" src="../images/loading.svg" style="width:40px;height:40px;"></image>
+<view wx:if="{{contentShow||noError}}" style="position:relative;{{css}}">
+  <view wx:if="{{code===loadingCode}}" class="glb-full-box layout-tr-center">
+    <image src="../images/loading.svg" style="width:40px;height:40px;"></image>
   </view>
   <slot></slot>
 </view>
