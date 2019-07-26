@@ -9,7 +9,7 @@ const REQUESTCONFIG = {
   baseURL:host
 };
 
-Page=function(option={}){
+Page=function(option){
   option.validate = new Validate(REQUESTCONFIG);
   
   // 双向绑定扩展
@@ -25,7 +25,7 @@ Page=function(option={}){
   option.beautyRequest.init(REQUESTCONFIG);
   return prePage(option);
 }
-Component = function (option={}) {
+Component = function (option) {
   option.validate = new Validate();
   return preComponent(option);
 }

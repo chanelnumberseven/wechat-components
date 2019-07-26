@@ -23,7 +23,7 @@ Request.prototype.sendRequest=function(config){
   let complete = config.complete;
   let task = null;
   let tasks=this.requestTasks;
-  config.complete = function () {
+  config.complete = ()=>{
     if (complete) complete();
     this.requestTasks =tasks.filter(function (item) {
       return item !== task;
