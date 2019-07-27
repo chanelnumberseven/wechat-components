@@ -84,7 +84,7 @@ BeautyRequest.prototype.beautyRequest=function(option,page,method){
     agent.success = (res) => {
       let httpState = res.statusCode;
       if (HTTPSUCCESSSTATE.indexOf(httpState) === -1) {
-        if (httpState == 401) this.on401();
+        if (httpState == 401) return this.on401();
         this.requestFail(httpState,option,reject);
         setPageState(page, httpState, httpState);
       } else {
