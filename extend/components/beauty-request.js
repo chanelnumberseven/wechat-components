@@ -12,6 +12,11 @@ const config = {
     Data: null,
     Message: ''
   },
+  on401:function(){
+    return wx.reLaunch({
+      url: '/pages/start/login/login'
+    })
+  },
   successCode: [10000]
 };
 
@@ -54,7 +59,6 @@ BeautyRequest.prototype.handleResponse = function(data,obj, page, resolve, rejec
   }else{
     this.requestFail(msg, obj, reject);
   }
-  setPageState(page, code, msg);
 }
 BeautyRequest.prototype.requestSuccess = function(data, obj, resolve) {
   if (obj.success) obj.success(data);
@@ -80,15 +84,17 @@ BeautyRequest.prototype.beautyRequest=function(option,page,method){
     agent.success = (res) => {
       let httpState = res.statusCode;
       if (HTTPSUCCESSSTATE.indexOf(httpState) === -1) {
-        this.requestFail(httpState,option, reject);
+        if (httpState == 401) this.on401();
+        this.requestFail(httpState,option,reject);
         setPageState(page, httpState, httpState);
       } else {
         let data = Object.assign({}, this.resTemplate, res.data);
         this.handleResponse(data,option, page, resolve, reject);
+        setPageState(page,200,'');
       }
     };
     agent.fail = (error) => {
-      this.requestFail(error,option,reject);
+      this.requestFail(error.errMsg,option,reject);
       setPageState(page, 'error', error.errMsg || error.toString());
     };
     this.request[method](agent);

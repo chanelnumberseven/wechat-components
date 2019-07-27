@@ -43,7 +43,7 @@ Request.prototype.abort=function(){
 Request.prototype.getParamsUrl=function(url,params){
   let value=[];
   let urlParam=url.split('?')[1];
-  if (getType(config.params) !== 'object') return url;
+  if (getType(params)!== 'object') return url;
   Object.keys(params).forEach(function(key){
     let val=params[key];
     if (val != null) value.push(`${encodeURIComponent(key)}=${encodeURIComponent(val)}`);
