@@ -25,6 +25,6 @@ wx.psip=new BeuatyRequest();
 wx.beautyRequest.init(REQUESTCONFIG);
 wx.psip.init(PSIPCONFIG);
 
-Page=function(option){
+Page=function(option={}){
   return prePage(Object.assign(option,OPTION));
 }
