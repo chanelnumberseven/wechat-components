@@ -4,13 +4,13 @@ Component({
       type: String,
       value: ''
     },
-    css: {
-      type: String,
-      value: ''
-    },
     defaultSrc:{
       type:String,
       value: './default.svg'
+    },
+    css: {
+      type: String,
+      value: ''
     }
   },
   data:{

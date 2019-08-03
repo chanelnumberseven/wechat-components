@@ -1,5 +1,5 @@
 <view style="position:relative;{{default}}{{success}}{{css}}">
   <image wx:if="{{loadState==0}}" src="./../../images/loading.svg" 
   style="position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;width:30px;height:30px;opacity:0.6"></image>
-  <image src="{{src||defaultSrc}}" style="{{default}}{{success}}{{css}}" binderror="fail" bindload="load"></image>
+  <image src="{{src||defaultSrc}}" style="{{default}}{{success}}{{css}}" binderror="fail" bindload="load" lazy-load></image>
 </view>
