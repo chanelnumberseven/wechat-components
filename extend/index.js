@@ -12,7 +12,6 @@ const PSIPCONFIG = {
   baseUrl: psip
 };
 const OPTION={
-  validate: new Validate(),
   assignValue:function (e) {
     let name = e.target.dataset.name;
     if (name) this.setData({
@@ -26,5 +25,6 @@ wx.beautyRequest.init(REQUESTCONFIG);
 wx.psip.init(PSIPCONFIG);
 
 Page=function(option={}){
+  option.validate=new Validate();
   return prePage(Object.assign(option,OPTION));
 }
