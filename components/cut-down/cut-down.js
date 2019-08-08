@@ -2,7 +2,11 @@ Component({
   properties:{
     value:{
       type:Number,
-      value:300
+      value:300,
+      observer: function () {
+        this.destroy();
+        this.start();
+      }
     },
     mini:{
       type: Boolean
@@ -18,7 +22,7 @@ Component({
   count:0,
   lifetimes: {
     attached: function () {
-      this.start();
+      //this.start();
     },
     moved:function(){
       this.destroy();
