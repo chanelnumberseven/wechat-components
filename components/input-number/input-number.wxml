@@ -1,5 +1,5 @@
 <view style="display:flex;">
-  <button class="button {{manusDisabled?'disabled':''}}" disabled="{{manusDisabled}}" bindtap="manus">-</button>
-  <input type="number" class="input" value="{{number}}" disabled></input>
+  <button class="button {{minDisabled?'disabled':''}}" disabled="{{manusDisabled}}" bindtap="manus">-</button>
+  <input type="number" class="input" value="{{val}}" bindinput="input" disabled="{{unInput}}"></input>
   <button class="button {{plusDisabled?'disabled':''}}" disabled="{{plusDisabled}}" bindtap="plus">+</button>
 </view>

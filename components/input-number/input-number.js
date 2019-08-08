@@ -8,19 +8,18 @@ Component({
       type:Number,
       value:1000
     },
-    value:{
+    val:{
       type:Number,
-      observer:function(value){
-        this.setData({
-          number:value
-        })
-      }
+      value:0
+    },
+    unInput:{
+      type:Boolean,
+      value:false
     }
   },
   data: {
-    number: 0,
     plusDisabled: false,
-    minusDisabled: false
+    minDisabled: false
   },
   attached:function(){
     this.init();
@@ -29,8 +28,11 @@ Component({
     this.init();
   },
   observers:{
-    number:function(){
+    val:function(value){
       this.btnAble();
+      this.triggerEvent('change', {
+        value: this.valueCheck()
+      });
     },
     min:function(){
       this.btnAble();
@@ -45,26 +47,42 @@ Component({
     },
     plus:function(){
       let max = this.data.max;
-      let value=++this.data.number;
-      if(value>max) value=max;
+      let value=++this.data.val;
       this.setData({
-        number:value
-      })
+        val:value
+      });
     },
     manus:function(){
       let min=this.data.min;
-      let value = --this.data.number;
-      if (value<min) value = min;
+      let value = --this.data.val;
       this.setData({
-        number: value
+        val: value
       })
     },
     btnAble:function(){
-      let value=this.data.number;
+      let value=this.data.val;
       this.setData({
         plusDisabled: value >=this.data.max,
-        minusDisabled:value<=this.data.min
+        minDisabled:value<=this.data.min
       });
+    },
+    input:function(e){
+      let value=e.detail.value;
+      this.setData({
+        val:value
+      })
+    },
+    valueCheck:function(){
+      let value = parseInt(this.data.val);
+      let agent=value;
+      let min=this.data.min;
+      let max=this.data.max;
+      if (value < min) agent = min;
+      if (value > max) agent = max;
+      if(agent!==value) this.setData({
+        val:agent
+      });
+      return agent;
     }
   }
 })
