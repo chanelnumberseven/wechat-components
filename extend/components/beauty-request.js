@@ -21,19 +21,12 @@ const config = {
   successCode: [10000]
 };
 
-function setPageState(page, code, message) {
+function setPageState(page, code, message){
   if (!page) return;
-  if (code === -1) {
-    page.setData({
-      loading: true,
-      disabled: true
-    })
-  } else {
-    page.setData({
-      loading: false,
-      disabled: false
-    })
-  }
+  page.setData({
+    loading: code===-1,
+    disabled: code === -1
+  })
   page.setData({
     code: code,
     message: message
@@ -73,7 +66,7 @@ BeautyRequest.prototype.requestFail = function(error, obj) {
   if (obj.fail) obj.fail(error);
   if(!obj.noTip) wx.showToast({
     icon: 'none',
-    title: `${obj.noErrorDetail ? obj.failTip||'未知错误': obj.failTip||'' + error}`
+    title: obj.failTip||error
   });
 };
 BeautyRequest.prototype.beautyRequest = function(option, page, method) {
@@ -115,6 +108,7 @@ BeautyRequest.prototype.beautyAll = function(obj, page) {
   return new Promise(function(resolve, reject) {
     Promise.all(obj.params).then((datas) => {
       setPageState(page, 10000, '');
+      if (obj.complete) obj.complete();
       for (let i = 0; i < datas.length; i++) {
         let data = datas[i];
         let msg = that.getMessage(data);
@@ -127,11 +121,10 @@ BeautyRequest.prototype.beautyAll = function(obj, page) {
       resolve(datas);
     }).catch((error) => {
       setPageState(page, 'error', error);
+      if (obj.complete) obj.complete();
       that.requestFail(error.errMsg, obj);
       reject(error);
-    }).finally(function() {
-      if (obj.complete) obj.complete();
-    });
+    })
   })
 };
 // 请求构造函数的初始化
