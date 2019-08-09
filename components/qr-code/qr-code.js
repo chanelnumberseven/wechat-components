@@ -13,7 +13,7 @@ Component({
       type:String,
       value:'',
       observer:function(value){
-        this.draw(value);
+        if(value) this.draw(value);
       }
     },
     css:{
@@ -24,7 +24,7 @@ Component({
     src:''
   },
   attached: function () {
-    this.draw(this.data.value);
+    //this.draw(this.data.value);
   },
   methods:{
     draw(url) {
@@ -33,7 +33,6 @@ Component({
       });
       let qrcode = new QRCode('canvas', {
         usingIn: this,
-        text: "code=0000000000000",
         width: this.data.width,
         height:this.data.height,
         colorDark: "#000000",
