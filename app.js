@@ -14,7 +14,6 @@ App({
     })
   },
   util: util,
-  ...parkings,
   ...update,
   ...autoLogin,
   appId: "wx5d6d6c53c868fa60",
