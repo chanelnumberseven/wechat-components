@@ -1,7 +1,7 @@
 <view class="tab {{separator?'separator':''}}" style="{{css}}">
   <scroll-view wx:if="{{position==='top'}}" scroll-x="{{true}}">
     <view class="tab-nav" style="{{tabNavCss}}">
-      <view class="tab-nav-item {{currentPageIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" bindtap="tab">
+      <view class="tab-nav-item {{currentPageIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{length||items}}" wx:key="*this" bindtap="tab">
         <view wx:if="{{items}}" class="tab-nav-text">{{item}}</view>
         <slot wx:else name="tab-nav-{{index}}"></slot>
       </view>
@@ -11,7 +11,7 @@
   <slot></slot>
   <view wx:if="{{swiper}}" style="flex:1">
     <swiper style="height:calc(100vh - 50px);{{swiperCss}}" current="{{currentPageIndex}}" bindchange="change">
-      <swiper-item wx:for="{{items||length}}" wx:key="{{index}}">
+      <swiper-item wx:for="{{items||length}}" wx:key="*this">
         <view style="height:100%;" scroll-y="true">
           <slot name="tab-{{index}}"></slot>
         </view>
@@ -19,14 +19,14 @@
     </swiper>
   </view>
   <view wx:else style="flex:1" style="height:calc(100vh - 50px);{{swiperCss}}">
-    <view hidden="{{currentPageIndex!==index}}" wx:for="{{items||length}}" wx:key="{{index}}" style="height:100%;" scroll-y="true">
+    <view hidden="{{currentPageIndex!==index}}" wx:for="{{items||length}}" wx:key="*this" style="height:100%;" scroll-y="true">
       <slot name="tab-{{index}}"></slot>
     </view>
   </view>
 
   <scroll-view wx:if="{{position==='bottom'}}" scroll-x="{{true}}">
     <view class="tab-nav" style="{{tabNavCss}}">
-      <view class="tab-nav-item {{currentPageIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{length||items}}" wx:key="{{index}}" bindtap="tab">
+      <view class="tab-nav-item {{currentPageIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{length||items}}" wx:key="*this" bindtap="tab">
         <view wx:if="{{items}}" class="tab-nav-text">{{item}}</view>
         <slot name="tab-nav-{{index}}"></slot>
       </view>

@@ -1,1 +1,3 @@
-<model-tab items="{{[1,2]}}" position="bottom"></model-tab>
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{true}}" />
+<model-tab wx-else items="{{[1,2]}}" position="bottom"></model-tab>
